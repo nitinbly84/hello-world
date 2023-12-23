@@ -9,6 +9,7 @@ import ParentComponent from './components/ParentComponent';
 import NamesList from './components/Listing'
 import CssProcessor from './components/CSSComponent'
 import NormalForm from './components/FormProcess';
+import LifecycleA from './components/LifecycleComponent';
 
 
 // Create any new React App using: npx create--react--app <project name>
@@ -20,8 +21,9 @@ function App() {
     // To format the code, select the code to format & press Ctrl+K then Ctrl+F
     return (
         <div className="App">
-            <NormalForm />
-            {/*<CssProcessor position={1} name={'primary'}/>
+            <LifecycleA name='props'/>
+            {/*<NormalForm />
+            <CssProcessor position={1} name={'primary'}/>
             <NamesList />
             <ParentComponent />
              * <Greet name="Doctor" />
