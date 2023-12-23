@@ -11,12 +11,12 @@ class LifecycleA extends Component {
             name: 'Constructor',
             count: 0
         }
-        console.log(`From constructor, name is ${this.state.name}`)
+        console.log(`constructor, name is ${this.state.name}`)
         this.updateCounter = this.updateCounter.bind(this)
     }
 
     static getDerivedStateFromProps(props, state) {                
-        console.log(`From getDerivedStateFromProps, prop name is ${props.name}`)
+        console.log(`getDerivedStateFromProps, prop name is ${props.name}`)
         //if it is uncommented then name will not be updated, as this method is called after state update
         //state.name = props.name
         // null can be returned but still check if it is causing any issue
@@ -28,9 +28,18 @@ class LifecycleA extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(`After component update, name is ${nextState.name}`)
+        console.log(`shouldComponentUpdate, name is ${nextState.name}`)
         // Don't return null if state is updated, as updated value will not be reflected
         return nextState
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log(`getSnapshotBeforeUpdate, name is ${prevState.name}`)
+        return prevState
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('componentDidUpdate, previous name is '+snapshot.name)
     }
 
     updateCounter = () => {
