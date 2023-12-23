@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// Ccheck the order of the execution of lifecycle methods before putting any logic there.
 class LifecycleA extends Component {
 
     constructor(props) {
