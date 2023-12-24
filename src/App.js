@@ -5,12 +5,13 @@ import Welcome from './components/Welcome'
 import Subscribe from './components/SubscribeButton'
 import CreateEl from './components/CreateElement'
 import CustomEvent from './components/EventHandling'
-import ParentComponent from './components/ParentComponent';
-import NamesList from './components/Listing'
+import ParentComponent from './parentChildComponents/ParentComponent';
+import NamesList from './listingComponents/Listing'
 import CssProcessor from './components/CSSComponent'
 import NormalForm from './components/FormProcess';
 import LifecycleA from './components/LifecycleComponent';
 import FragmentSample2, { FragmentSample } from './components/Fragment'
+import Parent from './pureComponents/Parent'
 
 // https://codesandbox.io/p/sandbox/00254q4n6p?file=%2Fsrc%2Findex.js
 
@@ -23,8 +24,9 @@ function App() {
     // To format the code, select the code to format & press Ctrl+K then Ctrl+F
     return (
         <div className="App">
-            <FragmentSample2 />
-            {/*<LifecycleA name='props'/>
+            <Parent />
+            {/*<FragmentSample2 />
+            <LifecycleA name='props'/>
             <NormalForm />
             <CssProcessor position={1} name={'primary'}/>
             <NamesList />
