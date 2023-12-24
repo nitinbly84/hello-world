@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import RegularComponent from './RegularComponent'
 import PureComponent from './PureComponent'
+import PureFunction from './PureFunction'
 
+// Child components will not be re-rendered if Parent is not re-rendered
 class Parent extends Component {
     constructor() {
         super()
@@ -24,14 +26,15 @@ class Parent extends Component {
 
     render() {
         console.log(`*********Parent was rendered....${this.state.name}${this.state.count}*********`)
-        // if we use below variable as props then both the components will be re-rendered
+        // if we use below variable as props then both the components, even Pure Function will be re-rendered
         const newName = `${this.state.name}${this.state.count}`
         // RegularComponent will be re-rendered even if we pass the same props
         return (
             <>
                 ParentComponent
-                <RegularComponent name={newName} />
-                <PureComponent name={newName} />
+                <PureFunction name={newName} />
+                {/*<RegularComponent name={newName} />
+                <PureComponent name={newName} /> */}
             </>
             )
     }
