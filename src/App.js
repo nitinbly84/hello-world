@@ -10,7 +10,9 @@ import NamesList from './components/Listing'
 import CssProcessor from './components/CSSComponent'
 import NormalForm from './components/FormProcess';
 import LifecycleA from './components/LifecycleComponent';
+import FragmentSample2, { FragmentSample } from './components/Fragment'
 
+// https://codesandbox.io/p/sandbox/00254q4n6p?file=%2Fsrc%2Findex.js
 
 // Create any new React App using: npx create--react--app <project name>
 // npm install axios
@@ -21,8 +23,9 @@ function App() {
     // To format the code, select the code to format & press Ctrl+K then Ctrl+F
     return (
         <div className="App">
-            <LifecycleA name='props'/>
-            {/*<NormalForm />
+            <FragmentSample2 />
+            {/*<LifecycleA name='props'/>
+            <NormalForm />
             <CssProcessor position={1} name={'primary'}/>
             <NamesList />
             <ParentComponent />
