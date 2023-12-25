@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ChildRefForm from './ChildRefForm';
 
 class RefForm extends Component {
 
@@ -14,6 +15,8 @@ class RefForm extends Component {
         // creating reference to use it to attach to some element in render() & then later call focus()
         // to put focus on the elelment when the page is rendered
         this.focusRef = React.createRef()
+        this.submitRef = React.createRef()
+        this.childRef = React.createRef()
 
         // React.createRef() creates a wrapper object around the element it is pointed to 
         // & then that elelment is referred by 'current'
@@ -50,6 +53,10 @@ class RefForm extends Component {
         this.setState({
             disableSubmit: result
         })
+        if (result) {
+            this.submitRef.current.disabled = true
+        }
+        this.childRef.current.disable()
         return result
     }
 
@@ -57,7 +64,13 @@ class RefForm extends Component {
     // to which ref is attached
     processData = event => {
         // we can use ref to read the value of the element it is attached to
-        alert(`Hello ${this.focusRef.current.value}. Your age is ${this.state.age}`)
+        if (this.childRef.current.ref.current.disabled == true)
+            alert(`Hello ${this.focusRef.current.value}. Your age is ${this.state.age}`)
+        else if (this.childRef.current.ref.current.value < 3)
+            alert('Give some comment to submit!!')
+        else
+            alert(`Comment: ${this.childRef.current.ref.current.value}`)
+        this.childRef.current.change(this.submitRef)
         // It prevents the page refresh after 'Submit', else input data will not be seen on refreshed page
         event.preventDefault()
     }
@@ -73,12 +86,7 @@ class RefForm extends Component {
         if (this.callBackRef)
             this.callBackRef.focus()
     }
-
-    componentWillUnmount() {
-        console.log('Component is unmounted....')
-    }
-
-
+        
     render() {
         // destructuring the state object & now userName can be used instead of this.state.userName
         const { userName, age } = this.state
@@ -92,8 +100,9 @@ class RefForm extends Component {
                 <br />
                 <label>Age: </label>
                 <input type="text" defaultValue="Give the valid age number" onChange={this.updateAgeEvent} ref={this.setCallBackRef} ></input>
+                <ChildRefForm ref={this.childRef} />
                 <div>
-                    <button type="submit" disabled={this.state.disableSubmit}>Submit</button>
+                    <button type="submit" disabled={this.state.disableSubmit} ref={this.submitRef} > Submit</button>
                 </div>
             </form>
         )
