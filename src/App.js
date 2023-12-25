@@ -8,10 +8,11 @@ import CustomEvent from './components/EventHandling'
 import ParentComponent from './parentChildComponents/ParentComponent';
 import NamesList from './listingComponents/Listing'
 import CssProcessor from './components/CSSComponent'
-import NormalForm from './components/FormProcess';
+import NormalForm from './formWithRefComponents/FormProcess';
 import LifecycleA from './components/LifecycleComponent';
 import FragmentSample2, { FragmentSample } from './components/Fragment'
 import Parent from './pureComponents/Parent'
+import RefForm from './formWithRefComponents/RefForm';
 
 // https://codesandbox.io/p/sandbox/00254q4n6p?file=%2Fsrc%2Findex.js
 
@@ -24,8 +25,9 @@ function App() {
     // To format the code, select the code to format & press Ctrl+K then Ctrl+F
     return (
         <div className="App">
-            <Parent />
-            {/*<FragmentSample2 />
+            <RefForm />
+            {/*<Parent />
+            <FragmentSample2 />
             <LifecycleA name='props'/>
             <NormalForm />
             <CssProcessor position={1} name={'primary'}/>
