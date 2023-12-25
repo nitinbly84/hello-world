@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ChildRefForm from './ChildRefForm';
 
+// Refer beblow link to check another way of forwarding refs-
+// https://www.youtube.com/watch?v=RLWniwmfdq4&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=30
 class RefForm extends Component {
 
     constructor() {
