@@ -54,6 +54,8 @@ class LifecycleA extends Component {
 
     render() {
         console.log('Rendering the UI.....')
+        if (this.props.name === 'Error')
+            throw new Error('Not the right name for props.....')
         return (            
             <div>
                 <h2> {`From render, name is ${this.state.name}`} </h2>

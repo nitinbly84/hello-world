@@ -13,7 +13,11 @@ import LifecycleA from './components/LifecycleComponent';
 import FragmentSample2, { FragmentSample } from './components/Fragment'
 import Parent from './pureComponents/Parent'
 import RefForm from './formWithRefComponents/RefForm';
+import Portal from './components/Portal'
+import ErrorBoundary from './components/ErrorBoundary';
+import FallbackUI from './components/FallbackUI';
 
+// Check below link for portal usage, if we remove usage of portal from below code then how it effects the UI
 // https://codesandbox.io/p/sandbox/00254q4n6p?file=%2Fsrc%2Findex.js
 
 // Create any new React App using: npx create--react--app <project name>
@@ -25,8 +29,16 @@ function App() {
     // To format the code, select the code to format & press Ctrl+K then Ctrl+F
     return (
         <div className="App">
-            <RefForm />
-            {/*<Parent />
+            {/* Below shows a way to provide different fallback UI for errors in different components. */}
+            <ErrorBoundary fallback={<h2>A different fallback</h2>}>
+                <LifecycleA name='props' />
+            </ErrorBoundary>
+            <ErrorBoundary fallback={<FallbackUI />}>
+                <LifecycleA name='Error' />
+            </ErrorBoundary>
+            {/*<RefForm />
+            <Portal />
+            <Parent />
             <FragmentSample2 />
             <LifecycleA name='props'/>
             <NormalForm />

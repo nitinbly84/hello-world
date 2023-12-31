@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\formWithRefComponents"
+    "\\src\\components"
   ],
-  "SelectedNode": "\\src\\index.css",
+  "SelectedNode": "\\src\\components\\FallbackUI.js",
   "PreviewInSolutionExplorer": false
 }

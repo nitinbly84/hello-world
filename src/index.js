@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NewApp from './NewApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // commented below tag else few lifecylce methods were executed twice
     // https://stackoverflow.com/questions/63512052/lifecycle-methods-gets-called-twice-at-initial-render-and-at-re-render-phase#:~:text=Please%20check%20your%20index.js%2C%20if%20your%20App.js%20is,just%20need%20to%20unwrap%20your%20App.js%20from%20%3CReact.StrictMode%3E.
     //<React.StrictMode>
-    < App />
+    <div>
+        {/*< App /> */}
+        < NewApp />
+    </div>
     //</React.StrictMode> */
 );
 
