@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components"
+    "\\src\\components",
+    "\\src\\highOrderComponents"
   ],
-  "SelectedNode": "\\src\\components\\FallbackUI.js",
+  "SelectedNode": "\\src\\highOrderComponents\\ClickCounter.js",
   "PreviewInSolutionExplorer": false
 }
