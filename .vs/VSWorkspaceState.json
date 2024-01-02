@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\highOrderComponents"
+    "\\src\\hookComponents"
   ],
-  "SelectedNode": "\\src\\highOrderComponents\\ClickCounter.js",
+  "SelectedNode": "\\src\\hookComponents\\MousePosition.js",
   "PreviewInSolutionExplorer": false
 }

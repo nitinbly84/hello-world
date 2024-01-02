@@ -62,7 +62,27 @@ class LifecycleA extends Component {
                 <div>
                     <button type='submit' onClick={this.updateCounter}>Change{this.state.count}</button>
                 </div>
+                <div>
+                    {(this.state.count%2 === 0) && <ChildComponent />}
+                </div>
             </div >
+        )
+    }
+}
+
+// This class is created to show the execution of componentWillUnmount()
+class ChildComponent extends Component {
+    constructor() {
+        super()
+    }
+
+    componentWillUnmount() {
+        console.log('ChildComponent is unmounted...')
+    }
+
+    render() {
+        return (
+            <h2> I am child Component </h2>
         )
     }
 }
