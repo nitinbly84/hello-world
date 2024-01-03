@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\hookComponents"
+    "\\src"
   ],
-  "SelectedNode": "\\src\\hookComponents\\MousePosition.js",
+  "SelectedNode": "\\src\\contextComponents",
   "PreviewInSolutionExplorer": false
 }

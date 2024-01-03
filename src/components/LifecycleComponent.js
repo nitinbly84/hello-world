@@ -76,6 +76,8 @@ class ChildComponent extends Component {
         super()
     }
 
+    // Add the cleanup actions here like unregister any event or listeners remove any connection added as part of this component
+    // else it will be shown as warning in console logs as some memory leaks
     componentWillUnmount() {
         console.log('ChildComponent is unmounted...')
     }
@@ -87,4 +89,36 @@ class ChildComponent extends Component {
     }
 }
 
+class LifecycleB extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            count: 0
+        }
+    }
+
+    componentDidMount() {
+        this.clocking = setInterval(this.tick, 1000)
+    }
+
+    // It will clear the interval to avoid any memory leak due to running interval even after component unmount.
+    componentWillUnmount() {
+        clearInterval(this.clocking)
+    }
+
+    tick = () => {
+        this.setState(prev => ({
+            count: prev.count+1
+        } ))
+    }
+
+    render() {
+        return (
+            <h2>{this.state.count}</h2>
+            )
+    }
+}
+
+export { LifecycleB }
 export default LifecycleA
