@@ -12,6 +12,8 @@ function WebDataFetchHook() {
 
     // [postID] as dependency array to avoid infinite loop of API calls
     // Have put the condition to make the API call when postID is not empty & a number
+    // One can use other http methods with axios like-
+    // axios.post('<URI>', <body object>)
     useEffect(() => {
         postID && Number(postID) && axios.get('https://jsonplaceholder.typicode.com/posts?id=' + postID)
             .then(res => {

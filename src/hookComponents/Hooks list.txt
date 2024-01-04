@@ -1,0 +1,9 @@
+useState
+useEffect
+useRef
+useContext
+useReducer
+useCallback
+useMemo
+
+Hooks are released as part of React 16.8, so can use hooks with this version onwards
