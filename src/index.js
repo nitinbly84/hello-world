@@ -9,7 +9,8 @@ import Container from './containerComponents/ContainerApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // commented below tag else few lifecylce methods were executed twice
+    // commented below tag else few lifecycle methods were executed twice
+    // When running server in Production mode then the logs are printed only once as components are rendered once only
     // https://stackoverflow.com/questions/63512052/lifecycle-methods-gets-called-twice-at-initial-render-and-at-re-render-phase#:~:text=Please%20check%20your%20index.js%2C%20if%20your%20App.js%20is,just%20need%20to%20unwrap%20your%20App.js%20from%20%3CReact.StrictMode%3E.
     //<React.StrictMode>
     <div>
@@ -18,7 +19,7 @@ root.render(
         <ReducerApp />*/}
         <Container />
     </div>
-    //</React.StrictMode> */
+    //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

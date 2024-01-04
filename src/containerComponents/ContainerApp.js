@@ -50,9 +50,9 @@ function Container() {
             <Title />
             <Name fName='Nitin' lName='Agrawal' />
             <Age age={curAge} />
-            <Button handleClick={handleAge} incr={10}>Increase Age</Button>
+            <Button handleClick={handleAgeTwo} incr={10}>Increase Age</Button>
             <Salary sal={curSal} />
-            <Button handleClick={handleSal} incr={1000}>Increase Salary</Button>
+            <Button handleClick={handleSalTwo} incr={1000}>Increase Salary</Button>
         </div>
         )
 }
