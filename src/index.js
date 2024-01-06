@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import NewApp from './NewApp';
 import ReducerApp from './reducerComponents/reducerApp';
 import Container from './containerComponents/ContainerApp';
+import RenderApp from './renderingComponents/RenderApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,8 +17,9 @@ root.render(
     <div>
         {/*< App />
         < NewApp />
-        <ReducerApp />*/}
-        <Container />
+        <ReducerApp />
+        <Container /> */}
+        <RenderApp />
     </div>
     //</React.StrictMode>
 );

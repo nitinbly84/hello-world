@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\renderingComponents"
   ],
-  "SelectedNode": "\\src\\contextComponents",
+  "SelectedNode": "\\src\\renderingComponents\\CounterReducer.js",
   "PreviewInSolutionExplorer": false
 }
